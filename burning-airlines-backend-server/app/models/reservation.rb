@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :flight, optional: true
+  belongs_to :flight, optional: true # Why is this optional?
   belongs_to :user, optional: true
 
   validates :seat, presence: true, format: { with: /\A[A-Z]\d+\z/, message: "format incorrect. Please enter seat number in the correct format, e.g. A1." }
