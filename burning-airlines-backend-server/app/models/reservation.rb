@@ -8,6 +8,7 @@ class Reservation < ApplicationRecord
 
   private
 
+  # TODO: Please provide a description for this method. 
   def seat_limits
     unless flight_id == nil
       row = seat[0].ord - 64
