@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<% if @user.reservations.any? %>
+  <p>RESERVATIONS</p>
+  <ul>
+    <% @sorted_res.each do |r| %>
+      <li><%= r.flight.date %> -- FLIGHT <%= link_to r.flight.number, flight_path(r.flight.id) %> -- <%= r.flight.origin %> to <%= r.flight.destination %> -- Seat <%= link_to r.seat, reservation_path(r.id) %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

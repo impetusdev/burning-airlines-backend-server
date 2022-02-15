@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h2>RESERVATION DETAILS</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= link_to @reservation.user.name, user_path(@reservation.user.id) %>
+</p>
+
+<p>
+  <strong>Flight Number:</strong>
+  <%= link_to @reservation.flight.number, flight_path(@reservation.flight.id) %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reservation.flight.date %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @reservation.flight.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @reservation.flight.destination %>
+</p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @reservation.seat %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>
