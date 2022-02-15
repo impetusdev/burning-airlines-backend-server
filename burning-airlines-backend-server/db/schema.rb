@@ -34,9 +34,8 @@ ActiveRecord::Schema.define(version: 2022_02_15_094907) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.text "seat"
+    t.string "seat"
     t.string "flight_id"
-    t.string "integer"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
