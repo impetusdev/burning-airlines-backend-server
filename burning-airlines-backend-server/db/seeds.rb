@@ -29,7 +29,7 @@ r1 = Reservation.create! seat: "F5"
 r2 = Reservation.create! seat: "D5"
 # r3 = Reservation.create! seat: "A5"
 # r4 = Reservation.create! seat: "B5"
-# r5 = Reservation.create! seat: "Q5" # this is not seeded correctly. 
+# r5 = Reservation.create! seat: "C5" # this is not seeded correctly. 
 
 puts "created #{Reservation.count} reservations"
 ###########################################
