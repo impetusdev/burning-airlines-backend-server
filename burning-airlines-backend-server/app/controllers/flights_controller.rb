@@ -12,7 +12,12 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
-    # render :json => @flight.to_json(:include => :plane )
+    headers['Access-Control-Allow-Origin'] = '*'
+    # TODO: consider using the cors.rb
+
+    # TODO: get the conditional rendering working. 
+    
+    render :json => @flight.to_json(:include => :reservations )
   end
 
   # GET /flights/new
