@@ -16,8 +16,8 @@ puts "created #{Flight.count} flights"
 ###########################################
 print "creating Users..."
 User.destroy_all
-u1 = User.create! name: "Alex", password: "chicken"
-u2 = User.create! name: "Lawrence", password: "chicken"
+u1 = User.create! name: "Alex", email: "alex@ga.co", password: "chicken"
+u2 = User.create! name: "Lawrence", email: "lawrence@ga.co", password: "chicken"
 # u3 = User.create! name: "Stanley", password: "chicken"
 # u4 = User.create! name: "Suraj", password: "chicken"
 
