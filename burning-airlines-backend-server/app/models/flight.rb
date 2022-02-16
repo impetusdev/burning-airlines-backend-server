@@ -1,5 +1,5 @@
 class Flight < ApplicationRecord
-    belongs_to :plane, optional: true # TODO: this should be non-optional
+    belongs_to :plane
     has_many :reservations
     validates :number, presence: true
     validates :origin, presence: true
