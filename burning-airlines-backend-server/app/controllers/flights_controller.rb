@@ -16,10 +16,7 @@ class FlightsController < ApplicationController
     @flights = Flight.find_by(origin: params[:origin], destination: params[:destination] ) # I think I need to make either of these search values optional. 
     
     render :json => @flights.to_json(:include => :reservations )
-
   end
-  
-  # TODO: get the conditional rendering working. 
   
   # GET /flights/1
   # GET /flights/1.json
@@ -30,8 +27,6 @@ class FlightsController < ApplicationController
     render :json => @flight.to_json(:include => :reservations )
   end
   
-  #TODO: We need a custom get request route that can take a destination & origin param and respond with the flights that match. 
-
   # GET /flights/new
   def new
     @flight = Flight.new
