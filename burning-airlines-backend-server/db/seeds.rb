@@ -1,7 +1,7 @@
 print "creating Planes..."
 Plane.destroy_all
-p1 = Plane.create! name: "Tiger", rows: 10, cols: 5
-p2 = Plane.create! name: "Lion", rows: 10, cols: 8
+p1 = Plane.create! name: "Tiger", rows: 5, cols: 8
+p2 = Plane.create! name: "Lion", rows: 5, cols: 8
 
 puts "created #{Plane.count} planes"
 ###########################################
@@ -25,7 +25,7 @@ puts "created #{User.count} users"
 ###########################################
 print "creating Reservations..."
 Reservation.destroy_all
-r1 = Reservation.create! seat: "F5"
+r1 = Reservation.create! seat: "A5"
 r2 = Reservation.create! seat: "D5"
 # r3 = Reservation.create! seat: "A5"
 # r4 = Reservation.create! seat: "B5"
