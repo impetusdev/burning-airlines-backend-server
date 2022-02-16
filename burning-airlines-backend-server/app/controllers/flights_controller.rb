@@ -9,16 +9,28 @@ class FlightsController < ApplicationController
     @flights_sorted_rev = @flights_sorted.reverse
   end
 
+  # Get /flights/search/:origin/:destination
+  def filtered_index 
+    puts "The current :origin #{params[:origin]} and the current :destination #{params[:destination]}"
+
+    @flights = Flight.find_by(origin: params[:origin], destination: params[:destination] )
+    # byebug
+    
+    render :json => @flights.to_json(:include => :reservations )
+
+  end
+  
+  # TODO: get the conditional rendering working. 
+  
   # GET /flights/1
   # GET /flights/1.json
   def show
     headers['Access-Control-Allow-Origin'] = '*'
 
-    # TODO: get the conditional rendering working. 
     
     render :json => @flight.to_json(:include => :reservations )
   end
-
+  
   #TODO: We need a custom get request route that can take a destination & origin param and respond with the flights that match. 
 
   # GET /flights/new
