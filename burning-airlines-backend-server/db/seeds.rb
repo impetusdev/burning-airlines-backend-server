@@ -31,6 +31,8 @@ r2 = Reservation.create! seat: "D5"
 # r4 = Reservation.create! seat: "B5"
 # r5 = Reservation.create! seat: "C5" # this is not seeded correctly. 
 
+#TODO: make it so that for each Reservation update the Flight seats value
+
 puts "created #{Reservation.count} reservations"
 ###########################################
 
