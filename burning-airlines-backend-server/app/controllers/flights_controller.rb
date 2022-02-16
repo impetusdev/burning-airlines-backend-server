@@ -13,7 +13,7 @@ class FlightsController < ApplicationController
   def filtered_index 
     puts "The current :origin #{params[:origin]} and the current :destination #{params[:destination]}"
 
-    @flights = Flight.find_by(origin: params[:origin], destination: params[:destination] )
+    @flights = Flight.find_by(origin: params[:origin], destination: params[:destination] ) # I think I need to make either of these search values optional. 
     # byebug
     
     render :json => @flights.to_json(:include => :reservations )
