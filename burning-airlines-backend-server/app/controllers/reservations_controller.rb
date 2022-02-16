@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token  
 
   # GET /reservations
   # GET /reservations.json
