@@ -56,7 +56,7 @@ class PlanesController < ApplicationController
   def destroy
     @plane.destroy
     respond_to do |format|
-      format.html { redirect_to planes_url, notice: 'Plane was successfully destroyed.' }
+      format.html { redirect_to planes_url, notice: 'Plane was successfully burned.' }
       format.json { head :no_content }
     end
   end
