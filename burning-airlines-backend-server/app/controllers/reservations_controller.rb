@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token  
+  skip_before_action :verify_authenticity_token  # STANLLEY USE ME 
 
   # GET /reservations
   # GET /reservations.json
@@ -25,7 +25,7 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new(reservation_params) #This reservation creation needs to be associated with the respective flight. 
 
     respond_to do |format|
       if @reservation.save

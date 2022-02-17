@@ -9,17 +9,24 @@ class FlightsController < ApplicationController
     @flights_sorted_rev = @flights_sorted.reverse
   end
 
+  # Get /flights/search/:origin/:destination
+  def filtered_index 
+    puts "The current :origin #{params[:origin]} and the current :destination #{params[:destination]}"
+
+    @flights = Flight.find_by(origin: params[:origin], destination: params[:destination] ) # I think I need to make either of these search values optional. 
+    
+    render :json => @flights.to_json(:include => :reservations )
+  end
+  
   # GET /flights/1
   # GET /flights/1.json
   def show
     headers['Access-Control-Allow-Origin'] = '*'
-    # TODO: consider using the cors.rb
 
-    # TODO: get the conditional rendering working. 
     
     render :json => @flight.to_json(:include => :reservations )
   end
-
+  
   # GET /flights/new
   def new
     @flight = Flight.new

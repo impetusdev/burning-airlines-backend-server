@@ -1,3 +1,6 @@
+### NOTE we have made this seed file very light weight, we will add more seed data closer to presentation. ###
+
+
 print "creating Planes..."
 Plane.destroy_all
 p1 = Plane.create! name: "Tiger", rows: 5, cols: 8
@@ -35,6 +38,7 @@ r2 = Reservation.create! seat: "D5"
 
 puts "created #{Reservation.count} reservations"
 ###########################################
+# Associations
 
 p1.flights << f1 # << f4
 p2.flights << f2 # << f3
